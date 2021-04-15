@@ -16,5 +16,10 @@
       {% endfor %}
     </div>
   </div>
+  <div class="container">
+    {% if not albums.exists %}
+            {% include '404.html' %}
+    {% endif %}
+  </div>
 </section>
 {% endblock %}
