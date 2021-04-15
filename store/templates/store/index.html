@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-10 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      {% for album in albums %}
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a href="{% url 'store:album_detail' album.pk %}" class="block relative h-55 rounded overflow-hidden">
+          <img alt="{{ album.title }}" class="object-cover object-center w-full h-full block" src="{{ album.picture }}">
+        </a>
+        <div class="mt-4">
+          <h2 class="text-gray-900 title-font text-lg font-medium">{{ album.title }}</h2>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <!-- ... -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <!-- header -->
+    <header class="text-gray-600 body-font bg-gray-500">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="{% url 'store:index' %}">Tous nos disques</a>
+      </nav>
+    </div>
+    </header>
+    <div class="flex p-5 align-center flex-col">
+      <div class="flex items-center flex-wrap min-w-min mt-2 mb-2">
+        <label class="text-gray-900 text-center font-light">Chercher un disque</label>
+        <form method="get" action="{% url 'store:search' %}" class="flex items-center min-w-min pl-2 mt-2 mb-2">
+          <input name="query" type='text' placeholder="Enter your input here" class="w-full pr-10 pl-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-green-500"/>
+          <svg class="w-4 h-4 fill-current text-gray-500 -ml-8 z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </form>
+      </div>
+    </div>
+  {% block content %}
+  {% endblock %}
+  </body>
+</html>
