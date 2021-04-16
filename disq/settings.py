@@ -17,7 +17,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['disq.herokuapp.com']
+ALLOWED_HOSTS = ['disqapp.herokuapp.com']
 
 
 # Application definition
